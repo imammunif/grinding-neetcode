@@ -64,17 +64,17 @@ def isAnagram(s: str, t: str) -> bool:
             for dictS in hashS:
                 # {c},{a},{r},{e},
                 for dictT in hashT:
-                    print(f'checking {dictS["char"]} with {dictT["char"]}')
+                    # print(f'checking {dictS["char"]} with {dictT["char"]}')
                     if dictS["char"] == dictT["char"]:
                         # founded the same char
                         if dictS["count"] == dictT["count"]:
                             eq = True
                             # has the same value
-                            print(f'equal {eq}')
+                            # print(f'equal {eq}')
                             break # stop the 2nd list loop
                         else:
                             eq = False
-                            print(f'equal {eq}')
+                            # print(f'equal {eq}')
                             # print("diff val")
                             # different value
                             # equal = False
@@ -82,7 +82,7 @@ def isAnagram(s: str, t: str) -> bool:
                     else:
                         eq = False
                 if eq == False:
-                    print("Found false stop!!")
+                    # print("Found false stop!!")
                     break
             equal = eq
         
@@ -105,7 +105,7 @@ def isAnagram(s: str, t: str) -> bool:
                                 else:
                                     eq = False
                                     # print(f'equal {eq}')
-                                    print("diff val")
+                                    # print("diff val")
                                     # different value
                                     # equal = False
                                     break
