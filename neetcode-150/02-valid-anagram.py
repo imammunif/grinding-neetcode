@@ -1,5 +1,5 @@
-s = "jar"
-t = "jam"
+s = "ab"
+t = "a"
 
 def isAnagram(s: str, t: str) -> bool:
     listS = list(s) # ["r","a","c","e","c","a","r"]
@@ -85,35 +85,36 @@ def isAnagram(s: str, t: str) -> bool:
                     print("Found false stop!!")
                     break
             equal = eq
-
-        if hashT != []:
-            if hashS != []:
-                # {r},{a},{c},{e}
-                eq = False
-                for dictT in hashT:
-                    # {c},{a},{r},{e},
-                    for dictS in hashS:
-                        print(f'checking {dictS["char"]} with {dictT["char"]}')
-                        if dictS["char"] == dictT["char"]:
-                            # founded the same char
-                            if dictS["count"] == dictT["count"]:
-                                eq = True
-                                # has the same value
-                                print(f'equal {eq}')
-                                break # stop the 2nd list loop
+        
+        if equal != False: # True
+            if hashT != []:
+                if hashS != []:
+                    # {r},{a},{c},{e}
+                    eq = False
+                    for dictT in hashT:
+                        # {c},{a},{r},{e},
+                        for dictS in hashS:
+                            # print(f'checking {dictS["char"]} with {dictT["char"]}')
+                            if dictS["char"] == dictT["char"]:
+                                # founded the same char
+                                if dictS["count"] == dictT["count"]:
+                                    eq = True
+                                    # has the same value
+                                    # print(f'equal {eq}')
+                                    break # stop the 2nd list loop
+                                else:
+                                    eq = False
+                                    # print(f'equal {eq}')
+                                    print("diff val")
+                                    # different value
+                                    # equal = False
+                                    break
                             else:
                                 eq = False
-                                print(f'equal {eq}')
-                                # print("diff val")
-                                # different value
-                                # equal = False
-                                break
-                        else:
-                            eq = False
-                    if eq == False:
-                        print("Found false stop!!")
-                        break
-                equal = eq
+                        if eq == False:
+                            # print("Found false stop!!")
+                            break
+                    equal = eq
 
     return equal
 
