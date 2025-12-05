@@ -1,5 +1,5 @@
-s = "racecar"
-t = "carrace"
+s = "jar"
+t = "jam"
 
 def isAnagram(s: str, t: str) -> bool:
     listS = list(s) # ["r","a","c","e","c","a","r"]
@@ -79,12 +79,14 @@ def isAnagram(s: str, t: str) -> bool:
                             # different value
                             # equal = False
                             break
+                    else:
+                        eq = False
                 if eq == False:
                     print("Found false stop!!")
                     break
             equal = eq
 
-    return hashS, hashT, equal
+    return equal
 
 print(isAnagram(s,t))
 
