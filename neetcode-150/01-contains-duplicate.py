@@ -5,11 +5,8 @@ def hasDuplicate(nums: list) -> bool:
     for num in nums:
         print(f'checking {num}')
         if num in hashMap:
-            # print("True")
             return True
-        else:
-            hashMap.add(num)
-    # print("False")
+        hashMap.add(num)
     return False  
 
 print(hasDuplicate(nums))
